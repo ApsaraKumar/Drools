@@ -1,0 +1,23 @@
+package com.vm.integratedDrool
+import com.vm.integratedDrool.Test;
+
+rule "sampleRule_1"
+	
+	salience 100
+	when
+		testObj:Test(age<5 || age>10)
+	then
+		testObj.setStatus('abc');
+	        testObj.setStat('samp');
+end
+
+rule "sampleRule_2"
+	
+	salience 90
+	when
+		testObj:Test(age<10 || age>15)
+	then
+		testObj.setStatus('def');
+                testObj.setStat('sample');
+end
+

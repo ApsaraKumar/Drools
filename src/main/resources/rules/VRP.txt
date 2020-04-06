@@ -1,0 +1,63 @@
+package com.vm.vision.entity.vendor.vo;
+#generated from Decision Table
+#From row number: 10
+rule "Pricing bracket_10"
+	
+	salience 170
+	when
+		VendorRiskParameters(couponCode == "CUP")
+		vrp: VendorRiskProfile(type == "customer pricing")
+	then
+		vrp.setBasePrice(250);
+		vrp.setCustomerPrice(250);
+		vrp.setVendorPrice(0);
+		vrp.setReportQReq("renewal+recred");
+		vrp.setExperianListOfSimilarsReq("renewal+recred");
+		vrp.setExperianCommIntScoreReq("renewal+recred");
+		vrp.setExperianBusProfileReq("renewal+recred");
+		vrp.setExperianPortMonReq("false");
+		vrp.setFacisEntityCheckReq("one time + Federal Only");
+		vrp.setFacisIndividualCheckReq("one time + Federal Only");
+		vrp.setInsAndDivVerificationReq("false");
+		vrp.setDocVerificationReq("false");
+		vrp.setAddressVerificationReq("false");
+		vrp.setPhoneVerificationReq("false");
+		vrp.setSecOfStateCheckReq("false");
+		vrp.setCriminalBackgroundCheckReq("false");
+		vrp.setSexualPredatorCheckReq("false");
+		vrp.setProfLicenseCheckReq("false");
+		vrp.setIndCoreNepotismCheckReq("false");
+		vrp.setEntityCoreNepotismChkReq("false");
+		vrp.setComment("Potential");
+end
+
+#From row number: 11
+rule "Pricing bracket_11"
+	
+	salience 180
+	when
+		VendorRiskParameters(q1 == "true", q3 == "true", q4 == "true", q5 == "false")
+		vrp: VendorRiskProfile(type == "customer pricing")
+	then
+		vrp.setBasePrice(1178);
+		vrp.setCustomerPrice(21);
+		vrp.setVendorPrice(1157);
+		vrp.setReportQReq("NONE");
+		vrp.setExperianListOfSimilarsReq("NONE");
+		vrp.setExperianCommIntScoreReq("NONE");
+		vrp.setExperianBusProfileReq("NONE");
+		vrp.setExperianPortMonReq("false");
+		vrp.setFacisEntityCheckReq("one time + Federal Only");
+		vrp.setFacisIndividualCheckReq("one time + Federal Only");
+		vrp.setInsAndDivVerificationReq("false");
+		vrp.setDocVerificationReq("false");
+		vrp.setAddressVerificationReq("false");
+		vrp.setPhoneVerificationReq("false");
+		vrp.setSecOfStateCheckReq("false");
+		vrp.setCriminalBackgroundCheckReq("false");
+		vrp.setSexualPredatorCheckReq("false");
+		vrp.setProfLicenseCheckReq("false");
+		vrp.setIndCoreNepotismCheckReq("false");
+		vrp.setEntityCoreNepotismChkReq("false");
+		vrp.setComment("Potential");
+end

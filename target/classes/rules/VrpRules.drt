@@ -1,0 +1,14 @@
+template header
+id
+vendorPrice
+test	
+package com.vm.drools;
+dialect "mvel"
+template "sampleRule"
+rule "sampleRule_@{row.rowNumber}"
+    when
+     $vrp : Vrp(spend>=@{test})
+    then
+     $vrp.vendorPrice="@{vendorPrice}";
+end
+end template

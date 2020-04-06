@@ -1,0 +1,14 @@
+template header
+id
+test
+comment
+package com.vm.drools;
+dialect "mvel"
+template "sampleRule1"
+rule "sampleRule1_@{row.rowNumber}"
+    when
+     $rrp : Rrp(customerLocations == @{"test"})
+    then
+     $rrp.comment="test";
+end
+end template

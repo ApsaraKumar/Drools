@@ -1,0 +1,17 @@
+template header
+id
+min
+max
+status
+stat
+package com.vm.readTextDrools;
+dialect "mvel"
+template "sampleRule"
+rule "sampleRule_@{row.rowNumber}"
+    when
+        $test : Test(age>=@{min} && age<@{max})
+    then
+     $test.status="@{status}";
+     $test.stat="@{stat}";
+end
+end template

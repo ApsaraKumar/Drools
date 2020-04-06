@@ -1,0 +1,15 @@
+template header
+id
+vendorPrice
+test	
+package com.vm.readTextDrools;
+dialect "mvel"
+dialect "java"
+template "sampleRule"
+rule "sampleRule_@{row.rowNumber}"
+    when
+     $vrp : Vrp(type == @{"test"})
+    then
+     $vrp.vendorPrice="@{vendorPrice}";
+end
+end template
